@@ -6,7 +6,7 @@ public class Normal extends Match {
         super(line);
     }
 
-
+   @Override
     public String getWinner() {
         if(getGoals_a() > getGoals_b()){
             return getTeam_a();

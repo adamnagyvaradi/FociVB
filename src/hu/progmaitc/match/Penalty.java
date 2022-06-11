@@ -33,6 +33,7 @@ public class Penalty extends Match{
         this.penalties_b = penalties_b;
     }
 
+    @Override
     public String getWinner() {
         if (getPenalties_a() > getPenalties_b()){
             return getTeam_a();

@@ -88,4 +88,8 @@ public class Match {
         this.goals_b = goals_b;
     }
 
+    public String getWinner(){
+        return "no winner";
+    }
+
 }
