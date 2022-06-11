@@ -8,7 +8,6 @@ public class Prime {
                 return false;
             }
         }
-
         return number >= 2;
     }
 

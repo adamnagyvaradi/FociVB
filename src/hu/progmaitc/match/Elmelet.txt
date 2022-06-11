@@ -1,0 +1,58 @@
+1 Mi a különbség az Exception és a RuntimeException között?
+
+Exception / checked exceptions
+        Olyan kódrész ami tudatosan dobhat hibát és ezt kezelni kell
+        pl file olvasás
+
+RuntimeException / un-checked exceptions
+        Programkód beli hiba amire nem feltétlen lehet felkészülni
+        pl null pointer
+        de ha a kód jó nem nagyon kéne iléyen hibába futni
+Try catch finaly blockal lehet elkapni őket. Itt el kell dönteni hogy mit kezdünk a hibával. HA pl nem tudunk egy file-t  belovasni és nekünk kell az a file akkor itt el kell dönteni
+hogyan szeretnénk folyatatni a programot.
+Érdemes figyelmi milyen hibát kaptunk. Ha pl NullPointerExeptiont akkor tudjuk hogy a kódban van a hiba és ezt kell kezelni.
+Ha pl egy filet nem tudunk beolvasni vagy egy adatbázishoz nem tudunk hozzáférni akkor el kell döntenünk hohy mi legyen a további teendő a programmal.
+
+//////////////////////////////////////////////////////////////////////////
+
+2 Hogyan tudunk egy kollekcióból bejárás közben elemeket törölni?
+Egy praktikus módszer ha iterátor segítségével tesszük ezt. Ezzel megnézhetjük hogy van e következő elem és feltételek feláítása után törölhetjük a következő elemet.
+
+ArrayList<Integer> list = new ArrayList<>();
+
+Teegyük fel hogy a lista elemei pozitív egész számok n-ig.
+
+Iterator<Integer> iterator = list.iterator; Létrehoztuk az iteartort.
+
+while(iterator.hasNext()){ // végigmegyük a kollekción
+Integer i = iterator.next();
+// ettől kezdve adhatunk feltételt pl a prímszámok nem kellenek...
+if (isPrime(i)){
+iterator.remove();
+}
+}
+
+//////////////////////////////////////////////////////////////////////////
+3 OOP koncepciók
+
+
+Object: Egy "entitás" akit egy class különböző fieldjei segítségével definiálunk.
+
+Öröklődés: Egyik osztály "leszármazik a másikból". Megkapja a filedjeit és a metódusait DE a konstruktorokat nem. JAVA-bban nincs többszörös csak lánc öröklődés.
+Többbalakúság: Egy metódus azonos névvel mást csinál más osztályokban. Leszármaztazott osztályoknál gyakori. Pl a toStringet szoktuk gyakran átírni @Override val szokás jelülni.
+Enkapszuláció: Egy olyan egyszég ami logikailag összetartozik. Jó példa erre az osztályok és a példányaik. Csak ahoz férnek hozzá amiket nekik kell.
+Abszrtakció: Egyfajta váltatos leírás. Az összetett dolgokat egyszerűsíti le. Absztrakt osztályok és interfacek során gyakran lehet használni pl absztrakt metódusokhoz.
+                Ezek megadják hogy mindenképp csinálj egy metódust meg de nem mondja meg hogy a leszármazott osztályban ezt hogy csináld.
+
+
+//////////////////////////////////////////////////////////////////////////
+
+4
+Milyen adatszerkezet segítségével lehetne a gyakorlati feladatok alatt beolvasott meccsek adatait mindig dátum szerint rendezett sorrendben tárolni?
+
+Szerintem egy TreeMap lenne a legoptimálisabb erre a rendezésre ahol a dátumot használjuk key nek és úgy rendeljük hozzás a többi objektumot.
+
+A dátumot kiegészíteném a felbontott és számosított változatával és eután egy CompareTo metódus segítségével megadnám hogy a dátumot hogy hasonlítsa össze.
+
+
+

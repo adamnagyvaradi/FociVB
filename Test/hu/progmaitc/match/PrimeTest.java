@@ -34,6 +34,8 @@ class PrimeTest {
         boolean case10 = Prime.isPrime( 25);
         assertFalse(case10);
 
+        // a négyzetgyököknél bukik el a metódus
+
 
     }
 

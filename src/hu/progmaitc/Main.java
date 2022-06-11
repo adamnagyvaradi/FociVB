@@ -9,7 +9,9 @@ import java.util.*;
 
 public class Main {
 
+
     public static void main(String[] args) {
+
         try {
             List<Match> matches = new ArrayList<>();
             try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\Prometheus\\IdeaProjects\\WorldCup\\matches_all.csv"))) {
